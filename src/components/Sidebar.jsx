@@ -1,36 +1,53 @@
 import React, { useState } from "react";
+import SidebarTab from "./SidebarTab";
+import Profile from "./Profile";
+import Rating from "./Rating";
 
-const Sidebar = () => {
-  const [isChecklistOpen, setIsChecklistOpen] = useState(true);
+export default function Sidebar() {
+  const [selectedTab, setSelectedTab] = useState(null);
+
+  const tabs = [
+    { id: 1, title: "Immobilienlexikon", description: "Immobilienwissen für alle Fälle", image: "/city.svg", buttonText: "KI" },
+    { id: 2, title: "Preisschätzung", description: "Den Wert Ihres Hauses schätzen lassen.", image: "/elevator.svg", buttonText: "LINK" },
+    { id: 3, title: "Checklisten", description: "Praktische Checklisten für jeden Schritt.", image: "/clipboard-check.svg", buttonText: "PDF" },
+    { id: 4, title: "Ratgeber", description: "Immobilien-Expertenrat für Eigentümer.", image: "/ecology-book.svg", buttonText: "PDF" },
+    { id: 5, title: "Mandatsnavigator", description: "Zum Traumheim mit KI-Unterstützung.", image: "/compass.svg", buttonText: "KI" },
+    { id: 6, title: "Wohntraumfinder", description: "Zum Traumheim mit KI-Unterstützung.", image: "/golf.svg", buttonText: "KI" },
+  ];
 
   return (
-    <aside className="w-1/4 bg-white p-4 shadow-lg min-h-screen">
-      <div className="flex items-center space-x-2 mb-6">
-        <div className="bg-teal-600 h-10 w-10"></div>
-        <h1 className="text-xl font-bold">ImmoTrust Schweiz AG</h1>
-      </div>
-      <nav className="space-y-4">
-        <button className="block text-left p-2 hover:bg-gray-100">Immobilienlexikon</button>
-        <button className="block text-left p-2 hover:bg-gray-100">Preisschätzung</button>
-        <button className="block text-left p-2 hover:bg-gray-100" onClick={() => setIsChecklistOpen(!isChecklistOpen)}>
-          Checklisten {isChecklistOpen ? "▼" : "►"}
-        </button>
-        {isChecklistOpen && (
-          <div className="ml-4">
-            <button className="block text-left p-2 hover:bg-gray-100">Praktische Checklisten</button>
+    <div className="w-1/4 bg-white p-4 shadow-lg flex flex-col">
+      <div className="flex justify-end items-center mt-11">
+        <div className="flex gap-1">
+          <img src="/tools.svg" alt="mode" />
+          <div className="rounded-xl bg-lightBlue px-3 py-1 text-secondary text-xs">
+            NACHTMODUS
           </div>
-        )}
-        <button className="block text-left p-2 hover:bg-gray-100">Ratgeber</button>
-        <button className="block text-left p-2 hover:bg-gray-100">Mandatsnavigator</button>
-        <button className="block text-left p-2 hover:bg-gray-100">Wohntraumfinder</button>
-      </nav>
-      <div className="mt-6 p-4 bg-gray-100 rounded-lg">
-        <p className="font-semibold">Immotrust AG</p>
-        <p className="text-gray-500">Vertrauensvolle Immobilienberatung seit 2008.</p>
-        <p className="mt-4 text-center font-semibold">Carlos Kuik – Eigentümer</p>
+        </div>
       </div>
-    </aside>
+      <img src="/Immo-Logo-blue.svg" alt="logo" className="h-16 my-6" />
+      <div>
+        {tabs.map((tab) => (
+          <SidebarTab
+            key={tab.id}
+            title={tab.title}
+            description={tab.description}
+            image={selectedTab === tab.id ? tab.image.replace(".svg", "-white.svg") : tab.image}
+            buttonText={tab.buttonText}
+            isSelected={selectedTab === tab.id}
+            onClick={() => setSelectedTab(tab.id)}
+          />
+        ))}
+      </div>
+      <Profile />
+      <div className="w-11/12 mx-auto">
+        <div className="flex gap-2 mt-6 justify-center">
+          <img src="/google.svg" alt="google-icon" className="xl:h-6 lg:h-4" />
+          <p className="text-primary font-semibold lg:text-xs xl:text-sm">Bewertengen</p>
+          <Rating />
+        </div>
+        <p className="mt-4 text-center lg:text-xss xl:text-xs text-secondary">4,6 VON 5 BASIEREND AUF 245 BEWERTUNGEN</p>
+      </div>
+    </div>
   );
-};
-
-export default Sidebar;
+}

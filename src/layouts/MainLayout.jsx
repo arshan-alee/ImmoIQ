@@ -4,15 +4,9 @@ import Content from "../components/Content";
 
 const MainLayout = () => {
   return (
-    <div className="flex">
-      {/* Sidebar */}
-      <div className="w-1/4">
+    <div className="flex py-14 justify-center w-11/12 max-w-screen-xl mx-auto">
         <Sidebar />
-      </div>
-      {/* Content */}
-      <div className="w-3/4 p-4">
         <Content />
-      </div>
     </div>
   );
 };
