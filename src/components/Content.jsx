@@ -15,18 +15,15 @@ const Content = () => {
           </p>
         </div>
         <div className="mr-4 px-4 flex flex-col gap-1">
-          <img src="/question-mark.svg" alt="logo" className="h-6" />
+          <img src="/question-mark.svg" alt="reload" className="h-6" />
           <p>Reload</p>
         </div>
       </div>
 
       <div className="w-full mx-auto flex-1 overflow-y-scroll">
-        <Document />
-        <Document />
-        <Document />
-        <Document />
-        <Document />
-
+      {[...Array(20)].map((_, index) => (
+          <div key={index} ><Document /></div>
+        ))}
       </div>
       <Footer />
     </div>

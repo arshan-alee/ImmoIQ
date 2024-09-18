@@ -7,12 +7,48 @@ export default function Sidebar() {
   const [selectedTab, setSelectedTab] = useState(null);
 
   const tabs = [
-    { id: 1, title: "Immobilienlexikon", description: "Immobilienwissen für alle Fälle", image: "/city.svg", buttonText: "KI" },
-    { id: 2, title: "Preisschätzung", description: "Den Wert Ihres Hauses schätzen lassen.", image: "/elevator.svg", buttonText: "LINK" },
-    { id: 3, title: "Checklisten", description: "Praktische Checklisten für jeden Schritt.", image: "/clipboard-check.svg", buttonText: "PDF" },
-    { id: 4, title: "Ratgeber", description: "Immobilien-Expertenrat für Eigentümer.", image: "/ecology-book.svg", buttonText: "PDF" },
-    { id: 5, title: "Mandatsnavigator", description: "Zum Traumheim mit KI-Unterstützung.", image: "/compass.svg", buttonText: "KI" },
-    { id: 6, title: "Wohntraumfinder", description: "Zum Traumheim mit KI-Unterstützung.", image: "/golf.svg", buttonText: "KI" },
+    {
+      id: 1,
+      title: "Immobilienlexikon",
+      description: "Immobilienwissen für alle Fälle",
+      image: "/city.svg",
+      buttonText: "KI",
+    },
+    {
+      id: 2,
+      title: "Preisschätzung",
+      description: "Den Wert Ihres Hauses schätzen lassen.",
+      image: "/elevator.svg",
+      buttonText: "LINK",
+    },
+    {
+      id: 3,
+      title: "Checklisten",
+      description: "Praktische Checklisten für jeden Schritt.",
+      image: "/clipboard-check.svg",
+      buttonText: "PDF",
+    },
+    {
+      id: 4,
+      title: "Ratgeber",
+      description: "Immobilien-Expertenrat für Eigentümer.",
+      image: "/ecology-book.svg",
+      buttonText: "PDF",
+    },
+    {
+      id: 5,
+      title: "Mandatsnavigator",
+      description: "Zum Traumheim mit KI-Unterstützung.",
+      image: "/compass.svg",
+      buttonText: "KI",
+    },
+    {
+      id: 6,
+      title: "Wohntraumfinder",
+      description: "Zum Traumheim mit KI-Unterstützung.",
+      image: "/golf.svg",
+      buttonText: "KI",
+    },
   ];
 
   return (
@@ -32,7 +68,11 @@ export default function Sidebar() {
             key={tab.id}
             title={tab.title}
             description={tab.description}
-            image={selectedTab === tab.id ? tab.image.replace(".svg", "-white.svg") : tab.image}
+            image={
+              selectedTab === tab.id
+                ? tab.image.replace(".svg", "-white.svg")
+                : tab.image
+            }
             buttonText={tab.buttonText}
             isSelected={selectedTab === tab.id}
             onClick={() => setSelectedTab(tab.id)}
@@ -40,14 +80,7 @@ export default function Sidebar() {
         ))}
       </div>
       <Profile />
-      <div className="w-11/12 mx-auto">
-        <div className="flex gap-2 mt-6 justify-center">
-          <img src="/google.svg" alt="google-icon" className="xl:h-6 lg:h-4" />
-          <p className="text-primary font-semibold lg:text-xs xl:text-sm">Bewertengen</p>
-          <Rating />
-        </div>
-        <p className="mt-4 text-center lg:text-xss xl:text-xs text-secondary">4,6 VON 5 BASIEREND AUF 245 BEWERTUNGEN</p>
-      </div>
+      <Rating/>
     </div>
   );
 }

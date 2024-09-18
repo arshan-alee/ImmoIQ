@@ -14,7 +14,7 @@ export default function SidebarTab({ title, description, image, buttonText, isSe
     >
       <div className="flex justify-between items-center">
         <div className="flex gap-3">
-          <img src={image} alt="mode" />
+          <img src={image} alt="tab-image" />
           <h1 className="xl:text-lg lg:text-base font-medium">{title}</h1>
         </div>
         <div className="relative">

@@ -48,7 +48,7 @@ export default function Document() {
               <div className="bg-primary text-white rounded-xl py-4 xl:px-6 lg:px-4 hover:bg-secondary lg:text-sm">
                 Download anfordern
               </div>
-              <img src="/heart.svg" alt="stopwatch" className=""/>
+              <img src="/heart.svg" alt="like" className=""/>
 
               </div>
             </div>
