@@ -12,7 +12,7 @@ const Navbar = () => {
                 <div className="flex space-x-4 justify-center">
                     <img src='/linkedin.svg' alt="linkedin" className="h-5" />
                     <img src='/instagram.svg' alt="instagram" className="h-6" />
-                    <button className="text-white">KONTAKT</button>
+                    <button className="text-white font-semibold">KONTAKT</button>
                 </div>
 
 

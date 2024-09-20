@@ -10,13 +10,13 @@ const Content = () => {
           <div className="text-2xl font-semibold">
             Beginnen Sie Ihre Verkaufsreise 👋
           </div>
-          <p className="leading-10">
+          <p className="leading-10 text-grey text-xl">
             Entdecken Sie mühelos jede Facette Ihres Verkaufsmandatsvertrags.
           </p>
         </div>
         <div className="mr-4 px-4 flex flex-col gap-1">
           <img src="/question-mark.svg" alt="reload" className="h-6" />
-          <p>Reload</p>
+          <p className="text-15">Reload</p>
         </div>
       </div>
 

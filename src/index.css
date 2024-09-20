@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+#root{
+  @apply font-roboto;
+}
+
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;

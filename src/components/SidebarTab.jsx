@@ -35,7 +35,7 @@ export default function SidebarTab({ title, description, image, buttonText, isSe
           )}
         </div>
       </div>
-      <p className={`xl:text-xs lg:text-xss ml-8 mt-1 ${isSelected ? 'text-white' : 'text-secondary'}`}>{description}</p>
+      <p className={`xl:text-11 lg:text-xss ml-8 mt-1 ${isSelected ? 'text-white' : 'text-secondary'}`}>{description}</p>
     </div>
   );
 }

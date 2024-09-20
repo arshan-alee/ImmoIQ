@@ -7,9 +7,16 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Roboto', 'ui-sans-serif', 'system-ui'],
+        'roboto': ['Roboto', 'ui-sans-serif', 'system-ui'], 
+        'jakarta': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'lato': ['Lato', 'sans-serif'],
       },
       fontSize: {
+        '10': '10px',
+        '11': '11px',
+        '13': '13px',
+        '14': '14px',
+        '15': '15px',
         'xss': '9px', 
       },
       colors : {
@@ -20,7 +27,9 @@ export default {
         secondary: {
           DEFAULT: '#034154'
         },
-        gray: "#C0C0C0",
+        grey:{DEFAULT: '#E8E8E8',
+          light: '#C0C0C0'
+        },
         lightBlue: "#EEFBFF",
         mustard : '#FEA500'
       }

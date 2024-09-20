@@ -28,7 +28,7 @@ const Rating = () => {
             ))}
           </div>
         </div>
-        <p className="mt-4 text-center lg:text-xss xl:text-xs text-secondary">
+        <p className="mt-4 text-center lg:text-xss xl:text-11 text-secondary">
           4,6 VON 5 BASIEREND AUF 245 BEWERTUNGEN
         </p>
       </div>

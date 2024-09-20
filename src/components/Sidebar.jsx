@@ -52,8 +52,8 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className="w-1/4 bg-white p-4 shadow-lg flex flex-col">
-      <div className="flex justify-end items-center mt-11">
+    <div className="w-1/4 bg-white p-4 shadow-lg flex flex-col mt-11">
+      <div className="flex justify-end items-center ">
         <div className="flex gap-1">
           <img src="/tools.svg" alt="mode" />
           <div className="rounded-xl bg-lightBlue px-3 py-1 text-secondary text-xs">
